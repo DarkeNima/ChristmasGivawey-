@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-width=1.0">
     <title data-key="title">🔥 Free Fire Membership Giveaway 🔥</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* ------------------------------------- */
         /* 1. iOS Style & General Layout (CSS) */
@@ -130,22 +129,6 @@
             overflow: hidden;
             margin-top: 10px;
         }
-        
-        /* ⭐️ ICON Styling (නව එකතු කිරීම) ⭐️ */
-        .radio-option .icon-container {
-            margin-right: 10px;
-            min-width: 20px; /* Icon සඳහා ඉඩක් තැබීම */
-            text-align: center;
-        }
-        .radio-option .icon-container i {
-            font-size: 1.1em;
-            color: #ff6600; /* රන්වන්/දියමන්ති වර්ණයක් */
-        }
-        
-        /* විශේෂ VIP Icon සඳහා වෙනස් වර්ණ */
-        #superVipWeekly + label .icon-container i {
-             color: #ff00ff; /* දම් පාට/VIP වර්ණය */
-        }
 
         .radio-option {
             display: flex;
@@ -168,8 +151,7 @@
             height: 20px;
             border: 2px solid var(--ios-border);
             border-radius: 50%;
-            margin-left: 10px; /* Radio button එක දකුණු පැත්තට */
-            order: 3; /* Radio button එක අවසානයට ගෙන ඒම */
+            margin-right: 10px;
             position: relative;
             cursor: pointer;
             transition: all 0.2s;
@@ -196,9 +178,6 @@
             margin: 0;
             font-weight: 400;
             color: var(--ios-text);
-            display: flex; /* Icon එක හා Text එක සමපාත කිරීමට */
-            align-items: center;
-            order: 2;
         }
 
         /* Submit Button (Call to Action) */
@@ -285,23 +264,135 @@
                 <label data-key="label_membership">ඔබට දිනා ගැනීමට අවශ්‍ය Membership වර්ගය තෝරන්න:</label>
                 
                 <div class="membership-options">
-                    
                     <div class="radio-option">
-                        <label for="monthly" data-key="mem_monthly">
-                            <span class="icon-container"><i class="fas fa-gem"></i></span>
-                            Monthly Membership (මාසික)
-                        </label>
                         <input type="radio" id="monthly" name="membershipType" value="Monthly Membership" required>
+                        <label for="monthly" data-key="mem_monthly">Monthly Membership (මාසික)</label>
                     </div>
                     
                     <div class="radio-option">
-                        <label for="weeklyLite" data-key="mem_lite">
-                            <span class="icon-container"><i class="fas fa-gem"></i></span>
-                            Weekly Lite (සතිපතා Lite)
-                        </label>
                         <input type="radio" id="weeklyLite" name="membershipType" value="Weekly Lite" required>
+                        <label for="weeklyLite" data-key="mem_lite">Weekly Lite (සතිපතා Lite)</label>
                     </div>
                     
+                    <div class="radio-option">
+                        <input type="radio" id="superVipWeekly" name="membershipType" value="Super VIP Weekly" required>
+                        <label for="superVipWeekly" data-key="mem_super">Super VIP Weekly (සතිපතා Super VIP)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn" data-key="submit_button">🎁 Giveaway එකට සහභාගී වීමට ඉදිරියට යන්න</button>
+            
+            <p class="terms" data-key="terms_text">නියමයන් සහ කොන්දේසි අදාළ වේ.</p>
+        </form>
+    </div>
+    
+    <script>
+        const translations = {
+            'si': {
+                'title': '🔥 Free Fire Membership Giveaway 🔥',
+                'main_heading': '💎 Free Fire VIP Membership Giveaway 💎',
+                'intro_text': 'Giveaway එකට එක්වීමට විස්තර පුරවන්න. ඔබගේ සහභාගීත්වය තහවුරු කිරීමට ඊළඟ පියවරට යන්න.',
+                'label_ffid': 'Free Fire ID:',
+                'placeholder_ffid': 'ඔබගේ Free Fire Player ID එක ඇතුලත් කරන්න',
+                'label_email': 'Email ලිපිනය:',
+                'placeholder_email': 'ප්‍රතිඵල දැනුම් දීමට ඔබගේ Email එක ඇතුලත් කරන්න',
+                'label_membership': 'ඔබට දිනා ගැනීමට අවශ්‍ය Membership වර්ගය තෝරන්න:',
+                'mem_monthly': 'Monthly Membership (මාසික)',
+                'mem_lite': 'Weekly Lite (සතිපතා Lite)',
+                'mem_super': 'Super VIP Weekly (සතිපතා Super VIP)',
+                'submit_button': '🎁 Giveaway එකට සහභාගී වීමට ඉදිරියට යන්න',
+                'terms_text': 'නියමයන් සහ කොන්දේසි අදාළ වේ.',
+                'lang_si': 'සිංහල',
+                'lang_en': 'English'
+            },
+            'en': {
+                'title': '🔥 Free Fire Membership Giveaway 🔥',
+                'main_heading': '💎 Free Fire VIP Membership Giveaway 💎',
+                'intro_text': 'Fill in the details to join the Giveaway. Proceed to the next step to confirm your participation.',
+                'label_ffid': 'Free Fire ID:',
+                'placeholder_ffid': 'Enter your Free Fire Player ID',
+                'label_email': 'Email Address:',
+                'placeholder_email': 'Enter your Email for results notification',
+                'label_membership': 'Select the Membership type you wish to win:',
+                'mem_monthly': 'Monthly Membership',
+                'mem_lite': 'Weekly Lite',
+                'mem_super': 'Super VIP Weekly',
+                'submit_button': '🎁 Proceed to participate in the Giveaway',
+                'terms_text': 'Terms and Conditions Apply.',
+                'lang_si': 'Sinhala',
+                'lang_en': 'English'
+            }
+        };
+
+        // --- භාෂා මාරු කිරීමේ කාර්යය ---
+        function updateText(lang) {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // භාෂා බොත්තම් සක්‍රීය/අක්‍රීය කිරීම
+            document.getElementById('lang-si').classList.remove('active');
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.documentElement.lang = lang;
+            localStorage.setItem('selectedLang', lang); // තේරීම මතක තබා ගැනීම
+        }
+
+        // --- Snow Animation කාර්යය ---
+        function createSnowflake() {
+            const snowContainer = document.getElementById('snowContainer');
+            if (!snowContainer) return;
+
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+
+            // ප්‍රමාණය සහ ආරම්භක ස්ථානය අහඹු ලෙස තේරීම
+            const size = Math.random() * 5 + 2;
+            const startX = Math.random() * window.innerWidth;
+            const duration = Math.random() * 10 + 5;
+            const opacity = Math.random() * 0.7 + 0.3;
+
+            snowflake.style.width = size + 'px';
+            snowflake.style.height = size + 'px';
+            snowflake.style.left = startX + 'px';
+            snowflake.style.opacity = opacity;
+            snowflake.style.animationDuration = duration + 's';
+            snowflake.style.animationDelay = -Math.random() * duration + 's'; 
+
+            snowContainer.appendChild(snowflake);
+
+            // තත්පර 20කට පසු ඉවත් කිරීම
+            setTimeout(() => {
+                snowflake.remove();
+            }, 20000);
+        }
+
+        // --- Event Listeners සහ Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+             // භාෂාව මුලින්ම පූරණය කිරීම
+             const savedLang = localStorage.getItem('selectedLang') || 'si';
+             updateText(savedLang);
+
+             // භාෂා මාරු කිරීමේ බොත්තම්
+             document.getElementById('lang-si').addEventListener('click', () => updateText('si'));
+             document.getElementById('lang-en').addEventListener('click', () => updateText('en'));
+
+             // Snowflakes නිර්මාණය කිරීම (සෑම මිලි තත්පර 300කට වරක්)
+             setInterval(createSnowflake, 300);
+        });
+    </script>
+</body>
+                            </html>                 
                     <div class="radio-option">
                         <label for="superVipWeekly" data-key="mem_super">
                              <span class="icon-container"><i class="fas fa-gem"></i></span>
