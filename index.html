@@ -2,35 +2,246 @@
 <html lang="si">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
     <title data-key="title">🔥 Free Fire Membership Giveaway 🔥</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Style - පෙර තිබූ ශෛලීන් නොවෙනස්ව පවතී */
-        body { font-family: 'Poppins', sans-serif; background-color: #1a1a2e; color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .container { background-color: #2e2e50; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); max-width: 500px; width: 100%; text-align: center; }
-        h1 { color: #ffcc00; margin-bottom: 10px; font-size: 1.8em; }
-        p { margin-bottom: 25px; }
-        .form-group { text-align: left; margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: bold; color: #b3b3e6; }
-        input[type="text"], input[type="email"], select { width: 100%; padding: 12px; border: none; border-radius: 8px; background-color: #1a1a2e; color: #ffffff; box-sizing: border-box; transition: all 0.3s; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b3b3e6%22%20d%3D%22M287%2069.4L146.2%20208.7L5.4%2069.4h281.2z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 10px top 50%; background-size: 10px auto; }
-        input[type="text"]:focus, input[type="email"]:focus, select:focus { outline: none; box-shadow: 0 0 0 2px #ffcc00; }
-        .membership-options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; background-color: #1a1a2e; padding: 15px; border-radius: 8px; }
-        .radio-option { display: flex; align-items: center; cursor: pointer; padding: 10px; border-radius: 5px; border: 1px solid #3e3e6b; transition: background-color 0.3s, border-color 0.3s; }
-        .radio-option:hover { background-color: #3e3e6b; }
-        .radio-option input[type="radio"] { margin-right: 10px; width: 18px; height: 18px; cursor: pointer; accent-color: #e60073; }
-        .radio-option label { margin: 0; cursor: pointer; font-weight: normal; color: #ffffff; }
-        .submit-btn { background-color: #e60073; color: #ffffff; padding: 15px 30px; border: none; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background-color 0.3s, transform 0.2s; width: 100%; margin-top: 25px; }
-        .submit-btn:hover { background-color: #ff1a8c; transform: translateY(-2px); }
-        .terms { font-size: 0.8em; color: #8c8cbf; margin-top: 25px; }
-        .lang-switch { position: absolute; top: 15px; right: 20px; }
-        .lang-switch button { background-color: #4a4a70; color: #ffffff; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
-        .lang-switch button:hover { background-color: #6a6a90; }
-        .lang-switch button.active { background-color: #ffcc00; color: #1a1a2e; }
+        /* ------------------------------------- */
+        /* 1. iOS Style & General Layout (CSS) */
+        /* ------------------------------------- */
+        :root {
+            --ios-bg: #f5f5f7; /* iOS Light Background */
+            --ios-card: #ffffff;
+            --ios-blue: #007aff; /* Apple Blue */
+            --ios-red: #ff3b30;
+            --ios-text: #1c1c1e;
+            --ios-border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Cool Gradient Background */
+            color: var(--ios-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden; /* Snow animation නිසා */
+            position: relative;
+        }
+
+        .container {
+            background-color: var(--ios-card);
+            padding: 30px;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.05); /* Soft iOS Shadow */
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            z-index: 10; /* Snow layer එකට උඩින් තිබීමට */
+        }
+
+        /* ------------------------------------- */
+        /* 2. Snow Animation (CSS) */
+        /* ------------------------------------- */
+        .snow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Mouse events යටින් ඇති දේ වෙත යැවීමට */
+            z-index: 1;
+        }
+
+        .snowflake {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* ------------------------------------- */
+        /* 3. Typography & Elements */
+        /* ------------------------------------- */
+        h1 {
+            color: var(--ios-blue);
+            margin-bottom: 5px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        p {
+            color: #6d6d72;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+            background-color: var(--ios-card);
+            padding: 0;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--ios-text);
+            font-size: 0.9em;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--ios-border);
+            border-radius: 8px;
+            background-color: var(--ios-bg);
+            color: var(--ios-text);
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: var(--ios-blue);
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+        }
+
+        /* Membership Options (List Style) */
+        .membership-options {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--ios-border);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--ios-border);
+            background-color: var(--ios-card);
+        }
+        
+        .radio-option:last-child {
+            border-bottom: none;
+        }
+
+        .radio-option input[type="radio"] {
+            /* iOS-style custom radio button පෙනුම සඳහා */
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--ios-border);
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .radio-option input[type="radio"]:checked {
+            border-color: var(--ios-blue);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+        }
+
+        .radio-option input[type="radio"]:checked::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--ios-blue);
+            border-radius: 50%;
+        }
+
+        .radio-option label {
+            flex-grow: 1;
+            margin: 0;
+            font-weight: 400;
+            color: var(--ios-text);
+        }
+
+        /* Submit Button (Call to Action) */
+        .submit-btn {
+            background-color: var(--ios-blue);
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 100%;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+        }
+
+        .submit-btn:hover {
+            background-color: #005bb5;
+            transform: translateY(-1px);
+        }
+
+        .terms {
+            font-size: 0.8em;
+            color: #8c8cbf;
+            margin-top: 15px;
+        }
+        
+        /* Language Switcher */
+        .lang-switch { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px;
+            z-index: 20;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .lang-switch button { 
+            background-color: transparent; 
+            color: #ffffff; 
+            border: none; 
+            padding: 8px 12px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: 600; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        .lang-switch button.active { 
+            background-color: var(--ios-card); 
+            color: var(--ios-blue);
+        }
     </style>
 </head>
 <body>
     
+    <div class="snow-container" id="snowContainer"></div>
+
     <div class="lang-switch">
         <button id="lang-si" data-lang="si" class="active">සිංහල</button>
         <button id="lang-en" data-lang="en">English</button>
@@ -116,14 +327,11 @@
             }
         };
 
-        let currentLang = 'si';
-
-        // 1. භාෂාවට අනුව පෙළ යාවත්කාලීන කරන කාර්යය
+        // --- භාෂා මාරු කිරීමේ කාර්යය ---
         function updateText(lang) {
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (translations[lang] && translations[lang][key]) {
-                    // Title ටැගය සහ placeholder සඳහා වෙනම හැසිරවීම
                     if (element.tagName === 'TITLE') {
                         document.title = translations[lang][key];
                     } else if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
@@ -134,29 +342,56 @@
                 }
             });
             
-            // භාෂා බොත්තම් සලකුණු කිරීම
             document.getElementById('lang-si').classList.remove('active');
             document.getElementById('lang-en').classList.remove('active');
             document.getElementById('lang-' + lang).classList.add('active');
-            
-            // HTML lang attribute එක යාවත්කාලීන කිරීම
             document.documentElement.lang = lang;
-            currentLang = lang;
-            
-            // බොත්තම් වල සිංහල/ඉංග්‍රීසි නම යාවත්කාලීන කිරීම (අවශ්‍ය නම්)
-            document.getElementById('lang-si').textContent = translations[lang]['lang_si'];
-            document.getElementById('lang-en').textContent = translations[lang]['lang_en'];
+            localStorage.setItem('selectedLang', lang); // තේරීම මතක තබා ගැනීම
         }
 
-        // 2. බොත්තම් වලට ක්ලික් event එක එක් කිරීම
-        document.getElementById('lang-si').addEventListener('click', () => updateText('si'));
-        document.getElementById('lang-en').addEventListener('click', () => updateText('en'));
-        
-        // 3. මුලින්ම සිංහල භාෂාවෙන් පෙන්වීමට
+        // --- Snow Animation කාර්යය ---
+        function createSnowflake() {
+            const snowContainer = document.getElementById('snowContainer');
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+
+            // ප්‍රමාණය සහ ආරම්භක ස්ථානය අහඹු ලෙස තේරීම
+            const size = Math.random() * 5 + 2; // 2px සිට 7px දක්වා
+            const startX = Math.random() * window.innerWidth;
+            const duration = Math.random() * 10 + 5; // 5s සිට 15s දක්වා
+            const opacity = Math.random() * 0.7 + 0.3;
+
+            snowflake.style.width = size + 'px';
+            snowflake.style.height = size + 'px';
+            snowflake.style.left = startX + 'px';
+            snowflake.style.opacity = opacity;
+            snowflake.style.animationDuration = duration + 's';
+            snowflake.style.animationDelay = -Math.random() * duration + 's'; // මුල සිටම වැටෙන ලෙස පෙන්වීමට
+
+            snowContainer.appendChild(snowflake);
+
+            // තත්පර 20කට පසු ඉවත් කිරීම (වැටීම අවසන් වූ පසු)
+            setTimeout(() => {
+                snowflake.remove();
+            }, 20000);
+        }
+
+        // --- Event Listeners සහ Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
-             // පරිශීලකයාගේ පෙර තේරීම පවතින්නේ නම් එය පූරණය කරන්න
+             // භාෂාව මුලින්ම පූරණය කිරීම
              const savedLang = localStorage.getItem('selectedLang') || 'si';
              updateText(savedLang);
+
+             // භාෂා මාරු කිරීමේ බොත්තම්
+             document.getElementById('lang-si').addEventListener('click', () => updateText('si'));
+             document.getElementById('lang-en').addEventListener('click', () => updateText('en'));
+
+             // Snowflakes නිර්මාණය කිරීම (සෑම මිලි තත්පර 300කට වරක්)
+             setInterval(createSnowflake, 300);
+        });
+    </script>
+</body>
+</html>;
         });
         
         // 4. පරිශීලක තේරීම මතක තබා ගැනීම
